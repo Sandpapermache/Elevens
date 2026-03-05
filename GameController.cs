@@ -7,10 +7,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class GameController
 {
-    private bool gameState;
-    private Deck totalDeck;
-    private Table currentcards;
-    
+    private Deck _deck;
+    private Table _table;
+    private MoveValidator _validator;
+    private GameState _state;
+
+    public GameState State => _state;
+    public Deck Deck => _deck;
+    public Table Table => _table;
 
     public GameController()
     {
